@@ -1,0 +1,69 @@
+{
+  "data_sources": {
+    "union_pacific": {
+      "api_url": "https://c02.my.uprr.com/api/service/customer/trace-equipment/1.3/?equipmentIds={}",
+      "token_url": "https://c02.my.uprr.com/api/oauth/token",
+      "payload": {
+        "grant_type": "client_credentials"
+      },
+      "headers": {
+        "Authorization": "Basic {AUTH_CODE}",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json"
+      }
+    },
+    "bnsf": {
+      "api_url": "http://www.bnsf.com/bnsf.was6/dillApp/rprt/QRY",
+      "payload": {
+        "selectedValues": "",
+        "spoolId": "",
+        "cmd": "",
+        "patName": "",
+        "patAddress": "",
+        "patAddress2": "",
+        "patCity": "",
+        "patState": "",
+        "patAttn": "",
+        "patZip": "",
+        "patPhone": "",
+        "selectStation": "",
+        "hEqpInit": "",
+        "hEqpNumb": "",
+        "selTotal": "",
+        "equipment": "{},"
+      }
+    },
+    "airtable": {
+      "api_key": "AIRTABLE_API_KEY",
+      "base_key": "AIRTABLE_BASE_KEY"
+    },
+    "canadian_national": {
+      "api_url": "https://automate.cn.ca/ecomsrvc/velocity/Tracing/english/TracingDirect_DirectAccess?&Function=STI&UserID=CENTRANSCN&Password=CENTRANSCN&Format={}&EquipmentID={}"
+    },
+    "canadian_pacific": {
+      "api_url": {
+        "login": "https://www8.cpr.ca/cpcustomerstation/",
+        "tracing": "https://www.cprintermodal.ca/customer/LoadTracing.do"
+      },
+      "credentials": {
+        "username": "CP_USERNAME",
+        "password": "CP_PASSWORD"
+      }
+    },
+    "csx": {
+      "api_url": "https://next.shipcsx.com/sxrw-ship/api/v1/shipments/search",
+      "headers": {"Content-Type": "application/json; charset=utf-8"}
+    },
+    "norfolk_southern": {
+      "credentials": {
+        "id": "NS_USERNAME",
+        "pwd": "NS_PASSWORD"
+      },
+      "api_url": {
+        "login": "https://accessns.nscorp.com/accessNS/rest/auth/v3/login",
+        "tracing": "https://accessns.nscorp.com/accessNS/rest/backend-v2-with-customer/Services/services/intermodal/v2/freightforward/2",
+        "last_free_day": "https://accessns.nscorp.com/accessNS/rest/backend/Services/services/quicksearch/v3/carUnitsInfoSearch"
+      }
+    }
+  }
+}
